@@ -5,7 +5,7 @@ const port = 80
 const addr = '0.0.0.0'
 
 const server = http.createServer((req, res) => {
-    fs.readFile('../knd-client/index.html', (err, out) => {
+    fs.readFile('../knd-client/client.html', (err, out) => {
         if(err)
             console.log(err)
         else {
