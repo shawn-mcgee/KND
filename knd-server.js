@@ -1,18 +1,20 @@
-const http = require('http')
-const fs   = require('fs')
+const server = require('http').createServer(handle)
+const io     = require('socket.io')(server)
+const fs     = require('fs')
 
 const port = 80
 const addr = '0.0.0.0'
-const home = '/index.html'
 
-const server = http.createServer((req, res) => {
-    var file = './knd-client'
-    if(req.url === '/')
-        file += home
-    else
-        file += req.url
+server.listen(port, addr, () => {
+    
+})
 
-    fs.readFile(file, (err, out) => {
+io.on('connection', (socket) => {
+    socket.emit('message', 'Hello World')
+})
+
+function handle (req, res) {
+    fs.readFile('.' + req.url, (err, out) => {
         if(err) {
             res.writeHead(404)
             res.end()
@@ -23,8 +25,4 @@ const server = http.createServer((req, res) => {
             res.end()
         }
     })
-})
-
-server.listen(port, addr, () => {
-
-})
+}
