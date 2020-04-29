@@ -5,8 +5,9 @@ const fs  = require('fs')
 var raw = fs.readFileSync('./knd-server.json')
 var cfg = JSON.parse(raw)
 
-const port = (cfg.port ? cfg.port :        80)
-const addr = (cfg.addr ? cfg.addr : '0.0.0.0')
+const port = (cfg.port ? cfg.port :         80)
+const addr = (cfg.addr ? cfg.addr :  '0.0.0.0')
+const motd = (cfg.motd ? cfg.motd : 'Welcome!')
 const home = '/knd-client.html'
 
 app.listen(port, addr, () => {
@@ -14,7 +15,10 @@ app.listen(port, addr, () => {
 })
 
 io.on('connection', (socket) => {
-    socket.emit('message', 'Hello World')
+    socket.emit('message', motd)
+    socket.on('message', (message) => {
+        io.emit('message', message)
+    })
 })
 
 function handle (req, res) {
