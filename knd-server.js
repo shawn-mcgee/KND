@@ -1,12 +1,16 @@
-const server = require('http').createServer(handle)
-const io     = require('socket.io')(server)
-const fs     = require('fs')
+const app = require('http').createServer(handle)
+const io  = require('socket.io')(app)
+const fs  = require('fs')
 
-const port = 80
-const addr = '0.0.0.0'
+var raw = fs.readFileSync('./knd-server.json')
+var cfg = JSON.parse(raw)
 
-server.listen(port, addr, () => {
-    
+const port = (cfg.port ? cfg.port :        80)
+const addr = (cfg.addr ? cfg.addr : '0.0.0.0')
+const home = '/knd-client.html'
+
+app.listen(port, addr, () => {
+    console.log('Listening on /' + addr + ':' + port)
 })
 
 io.on('connection', (socket) => {
@@ -14,7 +18,12 @@ io.on('connection', (socket) => {
 })
 
 function handle (req, res) {
-    fs.readFile('.' + req.url, (err, out) => {
+    var path = '.'
+    if(req.url === '/')
+        path += home
+    else
+        path += req.url
+    fs.readFile(path, (err, out) => {
         if(err) {
             res.writeHead(404)
             res.end()
