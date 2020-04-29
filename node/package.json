@@ -2,10 +2,9 @@
   "name": "knd",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "dev-client": "nodemon knd-client/client.js",
-    "dev-server": "nodemon knd-server/server.js"
+        "server":         "../knd-server/server.js",
+    "dev-server": "nodemon ../knd-server/server.js"
   },
   "author": "",
   "license": "ISC",
