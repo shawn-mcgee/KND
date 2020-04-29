@@ -1,0 +1,17 @@
+{
+  "name": "knd",
+  "version": "0.0.3",
+  "description": "",
+  "scripts": {
+        "server": "node    knd-server.js",
+    "dev-server": "nodemon knd-server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
