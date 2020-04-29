@@ -1,10 +1,10 @@
 {
   "name": "knd",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "",
   "scripts": {
-        "server": "node    knd-server.js",
-    "dev-server": "nodemon knd-server.js"
+        "server": "node    server.js",
+    "dev-server": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",

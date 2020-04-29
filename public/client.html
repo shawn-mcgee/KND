@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>KND</title>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
+        <link rel="stylesheet" href="theme.css" >
+        <link rel="stylesheet" href="client.css">        
+
+        <script defer src="socket.io/socket.io.js"></script>
+        <script defer src="client.js"             ></script>
+    </head>
+    <body>
+        <div class="container" id="container">
+            <div  class="msg-output" id="msg-output"></div>
+            <div  class="splitter"   id="splitter"  ></div>
+            <form class="msg-input"  id="msg-input" >
+                   <input  type="text"   class="msg-text-field" id="msg-text-field"><!--
+                --><button type="submit" class="msg-submit"     id="msg-submit"    >
+                    Send
+                </button>
+            </form>
+        </div>
+    </body>
+</html>
