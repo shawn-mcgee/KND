@@ -1,4 +1,5 @@
 {
     "port": "80",
-    "addr": "0.0.0.0"
+    "addr": "0.0.0.0",
+    "motd": "Welcome to KND!"
 }

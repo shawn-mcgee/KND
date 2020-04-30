@@ -5,9 +5,9 @@ const fs  = require('fs')
 var raw = fs.readFileSync('./server.json')
 var cfg = JSON.parse(raw)
 
-const port = (cfg.port ? cfg.port        :         80)
-const addr = (cfg.addr ? cfg.addr        :  '0.0.0.0')
-const motd = (cfg.motd ? cfg.motd.trim() :         '')
+const port = (cfg.port ? cfg.port :         80)
+const addr = (cfg.addr ? cfg.addr :  '0.0.0.0')
+const motd = (cfg.motd ? cfg.motd.trim() : 'Welcome to KND!')
 
 const root = './public'
 const home = '/client.html'
