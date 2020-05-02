@@ -25,7 +25,7 @@ msg_input.addEventListener('submit', event => {
 function tx_message(message) {
     var element = document.createElement('div')    
     element.setAttribute('class', 'tx_msg')
-    element.innerHTML = message
+    element.innerText = message
 
     append(element)
 }
@@ -33,7 +33,7 @@ function tx_message(message) {
 function rx_message(message) {
     var element = document.createElement('div')    
     element.setAttribute('class', 'rx_msg')
-    element.innerHTML = message
+    element.innerText = message
 
     append(element)
 }
