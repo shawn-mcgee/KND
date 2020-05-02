@@ -101,9 +101,6 @@ button.msg-submit {
 
 div.tx_msg {
     padding: 2px 16px 2px 16px;
-    
-    width: auto;
-    display: inline-block;
 
     background-color: var(--knd-tx-bg);
     color: var(--knd-tx-fg);
@@ -114,9 +111,6 @@ div.tx_msg {
 
 div.rx_msg {
     padding: 2px 16px 2px 16px;
-
-    width: auto;
-    display: inline-block;
 
     background-color: var(--knd-rx-bg);
     color: var(--knd-rx-fg);
