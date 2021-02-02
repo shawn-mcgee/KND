@@ -5,6 +5,18 @@ const msg_input      = document.getElementById('msg-input')
 const msg_text_field = document.getElementById('msg-text-field')
 const msg_submit     = document.getElementById('msg-submit')
 
+let uid32 = document.cookie
+console.log(uid32)
+
+socket.on('connect', () => {
+    socket.emit('uid32', uid32)
+})
+
+socket.on('uid32', (_uid32) => {
+    document.cookie = uid32 = _uid32
+    console.log(uid32)
+})
+
 socket.on('tx_message', (message) => {
     tx_message(message)
 })
