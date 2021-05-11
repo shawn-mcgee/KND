@@ -3,8 +3,8 @@
   "version": "0.0.12",
   "description": "",
   "scripts": {
-        "server": "node    server.js",
-    "dev-server": "nodemon server.js"
+    "knd": "node    knd.js",
+    "knd-dev": "nodemon knd.js"
   },
   "author": "",
   "license": "ISC",
